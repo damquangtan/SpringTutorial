@@ -1,0 +1,12 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="ConstructorInjection" class="dam.tan.constructorinjection.ConstructorInjection">
+		<constructor-arg>
+			<bean class="dam.tan.bean.impl.JsonOutputGenerator" />
+		</constructor-arg>
+	</bean>
+	<bean id="CsvOutputGenerator" class="dam.tan.bean.impl.CsvOutputGenerator" />
+	<bean id="JsonOutputGenerator" class="dam.tan.bean.impl.JsonOutputGenerator" />
+</beans>
