@@ -2,3 +2,8 @@
 - Trong Spring, các bean có thể truy cập tới các bean khác trong cùng hoặc khác file bean cấu hình.
 - Nếu bạn đang tham chiếu tới một bean trong một file xml khác, bạn có thể tham chiếu nó cùng tag "ref" với thuộc tính "bean"
 ví dụ: <ref  bean="someBean"/>
+============================= Trong phần Spring Bean =================================== 
+Trong Spring, có 3 cách để inject giá trị vào các thuộc tính trong Bean:
++ Normal way (cách thông thường)
++ Shortcut
++ "p" schema

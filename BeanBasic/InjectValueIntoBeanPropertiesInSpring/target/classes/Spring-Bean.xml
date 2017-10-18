@@ -1,0 +1,44 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema.p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="PersonHelper" class="dam.tan.helper.PersonHelper">
+		<constructor-arg>
+			<ref bean="PersonService"/>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="Person" class="dam.tan.bean.Person">
+		<property name="name">
+			<value>Test</value>
+		</property>
+		<property name="job">
+			<value>Job</value>
+		</property>
+	</bean>
+	<!-- Normal way -->
+	<bean id="Doctor" class="dam.tan.bean.Doctor">
+		<property name="name">
+			<value>Doctor Name</value>
+		</property>
+		<property name="job">
+			<value>Doctor</value>
+		</property>
+	</bean>
+	<!-- Shortcut -->
+	<bean id="Student" class="dam.tan.bean.Student">
+		<property name="name" value="Student Name"/>
+		<property name="job" value="Student"/>
+	</bean>
+	
+	<!-- "p" schema -->
+	<bean id="Teacher" class="dam.tan.bean.Teacher" p:name="Teacher Name" p:job="Teacher"/>
+		
+	<bean id="PersonService" class="dam.tan.service.impl.PersonServiceImpl">
+		<property name="personDao" ref="personDao"/>
+	</bean>
+	<bean id="personDao" class="dam.tan.dao.impl.PersonDaoImpl">
+		<property name="person" ref="Person" />
+	</bean>
+</beans>
