@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="CustomerBean" class="dam.tan.innerbean.Customer">
+		<property name="person">
+			<bean class="dam.tan.innerbean.Person">
+				<property name="name" value="Tan"/>
+				<property name="address" value="Thanh Hoa"/>
+				<property name="age" value="26"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="CustomerBean1" class="dam.tan.innerbean.Customer">
+		<constructor-arg>
+			<bean class="dam.tan.innerbean.Person">
+				<property name="name" value="Tan"/>
+				<property name="address" value="Thanh Hoa"/>
+				<property name="age" value="26"/>
+			</bean>
+		</constructor-arg>
+	</bean>
+</beans>

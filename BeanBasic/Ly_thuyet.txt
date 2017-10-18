@@ -7,3 +7,6 @@ Trong Spring, có 3 cách để inject giá trị vào các thuộc tính trong 
 + Normal way (cách thông thường)
 + Shortcut
 + "p" schema
+
+== Qua quá trình chạy thực tế nhận thấy trong một bean không thể khởi tạo đồng thời cả theo cách dùng setter hoặc theo cách
+dùng constructor, chỉ được dùng 1 trong 2 loại
