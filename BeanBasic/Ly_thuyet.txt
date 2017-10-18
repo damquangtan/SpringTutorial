@@ -1,0 +1,4 @@
+﻿- Tất cả các lớp bạn cần sử dụng trong Spring Ioc đều được xem là "Bean", và được khai báo trong file cấu hình bean hoặc thông qua annotation.
+- Trong Spring, các bean có thể truy cập tới các bean khác trong cùng hoặc khác file bean cấu hình.
+- Nếu bạn đang tham chiếu tới một bean trong một file xml khác, bạn có thể tham chiếu nó cùng tag "ref" với thuộc tính "bean"
+ví dụ: <ref  bean="someBean"/>
