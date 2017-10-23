@@ -10,3 +10,10 @@ Trong Spring, có 3 cách để inject giá trị vào các thuộc tính trong 
 
 == Qua quá trình chạy thực tế nhận thấy trong một bean không thể khởi tạo đồng thời cả theo cách dùng setter hoặc theo cách
 dùng constructor, chỉ được dùng 1 trong 2 loại
+
+============================= Phạm vi của Spring Bean ===================================
+1. Singleton - Trả ra một thể hiện của bean cho mỗi Spring IoC container
+2. Prototype - Trả ra một thể hiện mới của bean mỗi lần được yêu cầu
+3. Request - Trả ra một thể hiện bean đơn trên mỗi HTTP request
+4. Session - Trả ra một thể hiện bean đơn trên mỗi HTTP session
+5. globalSession - Trả ra một thể hiện bean đơn trên mỗi global HTTP session.
