@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="CustomerBean" class="dam.tan.beans.Customer">
+		<property name="maps">
+			<bean class="org.springframework.beans.factory.config.MapFactoryBean">
+				<property name="targetMapClass">
+					<value>java.util.HashMap</value>
+				</property>
+				<property name="sourceMap">
+					<map>
+						<entry key="key1">
+							<bean class="dam.tan.beans.Person">
+								<property name="name" value="dam tan 1"/>
+								<property name="address" value="thanh hoa 1"/>
+								<property name="age" value="26"/>
+							</bean>
+						</entry>
+						<entry key="key2">
+							<bean class="dam.tan.beans.Person">
+								<property name="name" value="dam tan 2"/>
+								<property name="address" value="thanh hoa 2"/>
+								<property name="age" value="26"/>
+							</bean>
+						</entry>
+						<entry key="key3">
+							<bean class="dam.tan.beans.Person">
+								<property name="name" value="dam tan 3"/>
+								<property name="address" value="thanh hoa 3"/>
+								<property name="age" value="26"/>
+							</bean>
+						</entry>
+					</map>
+				</property>
+			</bean>
+		</property>
+	</bean>
+</beans>
