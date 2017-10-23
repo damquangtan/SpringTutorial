@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="CustomerBean" class="dam.tan.beans.Customer">
+		<property name="sets">
+			<bean class="org.springframework.beans.factory.config.SetFactoryBean">
+				<property name="targetSetClass">
+					<value>java.util.HashSet</value>
+				</property>
+				<property name="sourceSet">
+					<list>
+						<bean class="dam.tan.beans.Person">
+							<property name="name" value="dam tan 1"/>
+							<property name="address" value="dam tan 1"/>
+							<property name="age" value="26"/>
+						</bean>
+						<bean class="dam.tan.beans.Person">
+							<property name="name" value="dam tan 2"/>
+							<property name="address" value="dam tan 2"/>
+							<property name="age" value="26"/>
+						</bean>
+						<bean class="dam.tan.beans.Person">
+							<property name="name" value="dam tan 3"/>
+							<property name="address" value="dam tan 3"/>
+							<property name="age" value="26"/>
+						</bean>
+					</list>
+				</property>
+			</bean>
+		</property>
+	</bean>
+</beans>
