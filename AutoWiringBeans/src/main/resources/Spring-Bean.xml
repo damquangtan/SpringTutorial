@@ -1,0 +1,37 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<!-- auto-wiring beans by constructor. In this case, since the data type of
+	 'person' bean is the same as the constructor argument data type in 'customer'
+	 bean's property (Person object), so, Spring auto wired it via constructor
+	 method -->
+	<bean id="customer" class="dam.tan.autowiringbean.bean.Customer" 
+		autowire="constructor"/>
+		
+	<bean id="person" class="dam.tan.autowiringbean.bean.Person"/>
+	
+	<!-- auto-wiring bean 'autodetect'. Neu 1 constructor duoc tim thay, su dung
+	'constructor'. Mat khac, su dung 'byType' -->
+	<bean id="Customer" class="dam.tan.autowiringbean.bean.Customer" 
+		autowire="autodetect"/>
+	<bean id="Person" class="dam.tan.autowiringbean.bean.Person"/>
+	
+	<!-- auto-wiring 'no'. This is the default mode, you need to wire your bean
+	via 'ref' attribute-->
+	<bean id="idCustomer" class="dam.tan.autowiringbean.bean.Customer">
+		<property name="person" ref="idPerson" />
+	</bean>
+	<bean id="idPerson" class="dam.tan.autowiringbean.bean.Person"/>
+	
+	<!-- auto-wiring bean by 'byName'. In this case, since the name of 'person'
+	bean is the same with the name of the 'customer' bean's property ('person')
+	so, Spring will auto wired it via set method 'setPerson(Person person)' -->
+	<bean id="customer" class="dam.tan.autowiringbean.bean.Customer" autowire="byName"></bean>
+	<bean id="person" class="dam.tan.autowiringbean.bean.Person"/>
+	
+	<!-- auto-wring bean 'byType'. In this case, since the data of 'person' bean
+	is same as the data type of the 'customer' bean's property (Person object),
+	so, Spring will auto wired it via setter method -->
+</beans>
