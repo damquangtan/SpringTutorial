@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean id="CustomerBean" class="dam.tan.bean.Customer" dependency-check="simple">
+		<property name="person" ref="PersonBean"/>
+		<property name="action" value="buy"/>
+		<property name="type" value="1"/>
+	</bean>
+	
+	<bean id="PersonBean" class="dam.tan.bean.Person">
+		<property name="name" value="dam tan"/>
+		<property name="address" value="thanh hoa"/>
+		<property name="age" value="26"/>
+	</bean>
+	
+	<!-- <bean id="CustomerBean" class="dam.tan.bean.Customer" dependency-check="simple">
+		<property name="person" ref="PersonBean"/>
+		<property name="action" value="buy"/>
+		<property name="type" value="1"/>
+	</bean>
+	
+	<bean id="PersonBean" class="dam.tan.bean.Person">
+		<property name="name" value="dam tan"/>
+		<property name="address" value="thanh hoa"/>
+		<property name="age" value="26"/>
+	</bean> -->
+</beans>

@@ -1,0 +1,15 @@
+﻿Khái niệm: Spring Batch là 1 framework cho việc xử lý 1 lô (khối) các công việc. Trong Spring Batch, 1 công việc chứa nhiều bước và mỗi bước chứa
+một nhiệm vụ READ-PROCESS-WRITE hoặc nhiệm vụ "single operation".
+
+1. Xử lý "READ-PROCESS-WRITE": Nó có nghĩa là đọc dữ liệu từ nguồn (csv, xml, hoặc database), xử lý nó và "write" nó sang một nguồn khác.
+Ví dụ: một bước có thể đọc dữ liệu từ 1 file CSV, xử lý nó và viết nó vào database. Spring Batch cung cấp nhiều lớp cho việc đọc/viết CSV, XML 
+và database.
+2. "single operation" (tasklet): Nó có nghĩa là chỉ làm đơn nhiệm vụ (single task), giống như làm sạch các nguồn trước hay sau một bước bắt đầu hoặc
+hoàn thành.
+3. Và các bước có thể móc nối nhau để chạy như 1 công việc (run as a job).
+==> Kết luận: 
+1 Job = many Steps.
+1 Step = 1 READ-PROCESS-WRITE or 1 Tasklet.
+Job = {Step 1 -> Step 2 - Step 3} (Móc nối với nhau)
+
+4. Một Spring batch job, để đọc 1 file csv dùng FlatFileItemReader, xử lý data với itemProcess và viết nó tới file XML dùng StaxEventItemWriter
